@@ -1,0 +1,24 @@
+---
+title: "teeth"
+author: "Young Yoon"
+date: "2019-04-23"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Introduction
+
+first I am going to read in the data and plot a couple of boxplots.
+```{r}
+teeth <- read.csv("data/teeth.csv", row.names=1)
+head(teeth)
+boxplot(len~dose, data=teeth)
+boxplot(len~supp, data=teeth)
+```
+
+Those turned out to be pretty boring so I decided to make a flashier oxplot using fancy syntax.'This revealed some fascinating patterns:
+```{r}
+boxplot(len ~ dose+supp, data=teeth)
+rnorm(3)
+```
